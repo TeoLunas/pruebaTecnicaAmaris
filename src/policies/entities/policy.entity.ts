@@ -18,7 +18,9 @@ export class Policy {
     @Column('int')
     prima: number;
 
-    @Column('text')
+    @Column('text', {
+        default: 'emitida'
+    })
     estado: string;
 
     @CreateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })

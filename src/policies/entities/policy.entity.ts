@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('policies')
 export class Policy {
@@ -9,6 +9,7 @@ export class Policy {
     @Column('text')
     rutTitular: string;
 
+    @Column('date')
     fechaEmision: Date;
 
     @Column('text')
@@ -20,4 +21,9 @@ export class Policy {
     @Column('text')
     estado: string;
 
+    @CreateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
+    createdAt: Date;
+
+    @UpdateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
+    updatedAt: Date;
 }

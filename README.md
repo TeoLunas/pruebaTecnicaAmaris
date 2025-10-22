@@ -1,88 +1,109 @@
-# Prueba tecnica Amaris
+# 🚀 Prueba Técnica — Amaris
 
 <p align="center">
-  <img src="https://nestjs.com/img/logo-small.svg" width="50" alt="Nest Logo" />
+  <img src="https://nestjs.com/img/logo-small.svg" width="80" alt="NestJS Logo" />
 </p>
 
-### Tecnologias usadas
+> Proyecto técnico desarrollado con **NestJS** y **PostgreSQL**, siguiendo buenas prácticas de arquitectura, documentación y organización de código.
 
-Lenguaje/framework
-- **NestJS**
+---
 
-Base de datos 
-- **PostgreSQL**
+## 🧰 Tecnologías usadas
 
-### Instrucciones para iniciar el proyecto
+| Tipo | Tecnología |
+|------|-------------|
+| 🧠 Lenguaje / Framework | **NestJS** |
+| 🗄️ Base de Datos | **PostgreSQL** |
 
-1. Clonar repositorio desde github
+---
 
+## ⚙️ Instrucciones para iniciar el proyecto
+
+### 1️⃣ Clonar el repositorio
 ```bash
 git clone https://github.com/TeoLunas/pruebaTecnicaAmaris.git
 ```
 
-2. Ir a carpeta del proyecto
-
-```
+### 2️⃣ Entrar al proyecto
+```bash
 cd prueba-tecnica-vida-camara
 ```
 
-3. Instalar dependencias del proyecto con gestor de paquetes preferido
+### 3️⃣ Instalar dependencias
+Puedes usar el gestor de paquetes que prefieras 👇
 
-*con npm*
+**npm**
 ```bash
 npm install
 ```
-*con yarn*
+
+**yarn**
 ```bash
-yarn install  #yarn
-```
-*con pnpm*
-```bash  
-pnpm install  #pnpm
-```
-4. Generar archivo de variables de entorno *.env*, basado en archivo *.env.template*
-
-```text
-DB_PASSWORD=            #Password para base de datos
-DB_NAME=                #Nombre que se le dara a la base de datos
-DB_HOST=                #Url donde estara alojada la base de datos
-DB_PORT=5432            #Puerto de la base de datos, por defecto 5432 de Potgresql
-DB_USERNAME=postgres    #Usuario para acceder a la base de datos
+yarn install
 ```
 
-5. (**opcional**) Ejecutar comando para inicializar contenedor con base de datos
+**pnpm**
+```bash
+pnpm install
+```
+
+---
+
+### 4️⃣ Crear archivo de variables de entorno
+
+Crea un archivo **`.env`** basado en **`.env.template`** y completa los valores requeridos:
+
+```env
+DB_PASSWORD=            # Password de la base de datos
+DB_NAME=                # Nombre de la base de datos
+DB_HOST=                # URL o IP del servidor de base de datos
+DB_PORT=5432            # Puerto de PostgreSQL por defecto
+DB_USERNAME=postgres    # Usuario para acceder a la base de datos
+```
+
+---
+
+### 5️⃣ (Opcional) Levantar base de datos con Docker
+Si deseas iniciar una base de datos local con Docker:
+
 ```bash
 docker compose up -d
 ```
 
-6. Ejecutar migracion de base de datos
+---
+
+### 6️⃣ Ejecutar migraciones
+Aplica las migraciones para crear la estructura de la base de datos:
 
 ```bash
 npm run migration:run
 ```
 
-7. Inciar aplicacion
+---
 
-En modo desarrollo
+### 7️⃣ Iniciar la aplicación
+
+**Modo desarrollo**
 ```bash
 npm run start:dev
 ```
 
-En modo produccion
+**Modo producción**
 ```bash
 npm run start
 ```
 
+---
 
-Urls de documentacion con *Swagger*
+## 📘 Documentación de API (Swagger)
 
-Para poder verificar y probar directamente los enpoints se encuentra disponible swagger, el cual se puede acceder mediante la url
+Puedes acceder a la documentación y probar los endpoints desde Swagger UI en:
 
 ```text
 http://localhost:{PORT}/api/docs
 ```
 
-### NOTAS
+---
 
 ## 📂 Estructura del Proyecto
 
@@ -99,9 +120,6 @@ C:.
 │       └───📑 policies
 │           ├───📄 dto
 │           └───🏛️ entities
-├───📚 node_modules
-│   └───@unrs
-│       └───resolver-binding-win32-x64-msvc
 ├───💻 src
 │   ├───🧩 common
 │   │   ├───📄 dtos
@@ -115,6 +133,8 @@ C:.
 └───🧪 test
 ```
 
+---
+
 ### 🧠 Descripción de carpetas
 
 | Carpeta | Descripción |
@@ -126,13 +146,13 @@ C:.
 | 🗄️ **src/database/** | Configuración de base de datos y migraciones de TypeORM. |
 | 📑 **src/policies/** | Lógica de negocio relacionada con pólizas (DTOs, entidades, servicios, controladores). |
 | 🧪 **test/** | Pruebas unitarias o end-to-end del proyecto. |
-| 📚 **node_modules/** | Dependencias instaladas mediante npm o yarn. |
+
+---
 
 
-
-Estructura de la base de datos.
-
+## 🗄️ Estructura de la base de datos
 ### 🧾 Tabla: `policies`
+
 
 | Columna       | Tipo de dato     | Descripción                                     | Restricciones / Default               |
 |----------------|------------------|-------------------------------------------------|---------------------------------------|
@@ -149,4 +169,3 @@ Estructura de la base de datos.
 > - Esta entidad se mapea a la tabla `policies` en la base de datos.  
 > - Usa decoradores de TypeORM para definir las columnas y metadatos.  
 > - Los campos `createdAt` y `updatedAt` son manejados automáticamente por TypeORM.
-

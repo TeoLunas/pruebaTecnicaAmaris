@@ -17,40 +17,47 @@ Base de datos
 1. Clonar repositorio desde github
 
 ```bash
-  git clone https://github.com/TeoLunas/pruebaTecnicaAmaris.git
+git clone https://github.com/TeoLunas/pruebaTecnicaAmaris.git
 ```
 
 2. Ir a carpeta del proyecto
 
 ```
-  cd prueba-tecnica-vida-camara
+cd prueba-tecnica-vida-camara
 ```
 
 3. Instalar dependencias del proyecto con gestor de paquetes preferido
 
+*con npm*
 ```bash
-  npm install   #npm
-  yarn install  #yarn
-  pnpm install  #pnpm
+npm install
 ```
-4. Generar archivo de variables de entorno .env, basado en archivo .env.template
+*con yarn*
+```bash
+yarn install  #yarn
+```
+*con pnpm*
+```bash  
+pnpm install  #pnpm
+```
+4. Generar archivo de variables de entorno *.env*, basado en archivo *.env.template*
 
 ```text
-    DB_PASSWORD=            #Password para base de datos
-    DB_NAME=                #Nombre que se le dara a la base de datos
-    DB_HOST=                #Url donde estara alojada la base de datos
-    DB_PORT=5432            #Puerto de la base de datos, por defecto 5432 de Potgresql
-    DB_USERNAME=postgres    #Usuario para acceder a la base de datos
+DB_PASSWORD=            #Password para base de datos
+DB_NAME=                #Nombre que se le dara a la base de datos
+DB_HOST=                #Url donde estara alojada la base de datos
+DB_PORT=5432            #Puerto de la base de datos, por defecto 5432 de Potgresql
+DB_USERNAME=postgres    #Usuario para acceder a la base de datos
 ```
 
 5. (**opcional**) Ejecutar comando para inicializar contenedor con base de datos
 ```bash
-   docker compose up -d
+docker compose up -d
 ```
 
 6.- Ejecutar migracion de base de datos
 
 ```bash
-  npm run migration:run
+npm run migration:run
 ```
 
